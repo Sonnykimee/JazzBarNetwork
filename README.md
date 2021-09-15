@@ -1,2 +1,2 @@
-# Jazz Club Network
-HTML file storage repo for Jazz Club Network Webpage
+# Jazz Bar Network
+HTML file storage repo for Jazz Bar Network Webpage
