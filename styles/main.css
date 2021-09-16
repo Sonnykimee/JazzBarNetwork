@@ -1,0 +1,26 @@
+@import url('Average-Regular.ttf');
+
+body {
+	background: #1A1A1A;
+	font-family: 'Average', serif;
+	font-size: 18px;
+	color: white
+}
+
+h1 {
+	font-size: 24px;
+	color: #F9E79F
+}
+
+a {
+	color: white;
+}
+a.visited {
+	color: #EC7063;
+}
+a:hover {
+	color: white;
+}
+a:active {
+	color: #EC7063;
+}
