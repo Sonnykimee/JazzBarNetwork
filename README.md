@@ -1,4 +1,4 @@
 # Jazz Bar Network
-HTML file storage repo for Jazz Bar Network Webpage
+This is HTML file storage repository for Jazz Bar Network Webpage.
 
 You are free to use, modify and redistribute any resource on this Github page.
