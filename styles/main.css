@@ -1,15 +1,27 @@
 @import url('Average-Regular.ttf');
 
+.neonText {
+	color: #F9E79F;
+	text-shadow:
+		0 0 4px #FCEDB4,
+		0 0 6px #FCEDB4;
+}
+
 body {
 	background: #1A1A1A;
 	font-family: 'Average', serif;
 	font-size: 18px;
-	color: white
+	color: white;
 }
 
 h1 {
 	font-size: 24px;
-	color: #F9E79F
+	color: #F9E79F;
+}
+
+h2 {
+	font-size: 24px;
+	color: #F9E79F;
 }
 
 a {
@@ -23,4 +35,34 @@ a:hover {
 }
 a:active {
 	color: #EC7063;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 50;
+	overflow: hidden;
+	background-color: #343434;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+li a:hover {
+	background-color: #111;
+}
+
+.container {
+	margin-left: 5vw;
+	margin-right: 5vw;
 }
