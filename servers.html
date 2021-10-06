@@ -28,29 +28,12 @@
 			</h2>
 
 			<script>
-				let h = new Headers();
-				h.append("Accept", "application/json");
-
-				let request = new Request("files/servers.json", {
-					method: "POST",
-					headers: h,
-					mode: "cors"
-				});
-
-				fetch(request)
-				.then( (resp) => {
-					if (resp.ok) {
-						return resp.json();
-					} else {
-						throw new Error("BAD HTTP ERROR");
-					}
+				fetch("files/servers.json")
+				.then(function (resp) {
+					return resp.json();
+				}).then(function (obj) {
+					console.log(obj);
 				})
-				.then( (data) => {
-					console.log(json);
-				})
-				.catch( (err) => {
-					console.log("ERROR:", err.message);
-				});
 			</script>
 		</div>
 	</body>
