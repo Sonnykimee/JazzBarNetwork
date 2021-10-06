@@ -30,6 +30,7 @@
 			<p>Download JSON File: <a href="files/servers.json">servers.json</a></p>
 
 			<script>
+				// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-3.0
 				var init = {
 					method: "GET",
 					headers: {
@@ -47,6 +48,7 @@
 				}).then(function (jsonData) {
 					console.log(jsonData.servers[0].address, jsonData.servers[0].name, jsonData.servers[0].motd);
 				})
+				// @license-end
 			</script>
 		</div>
 	</body>
