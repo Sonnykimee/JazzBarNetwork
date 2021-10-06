@@ -26,8 +26,32 @@
 			<h2>
 				List of Servers
 			</h2>
-			
-			<p>Download JSON File: <a href="files/servers.json">servers.json</a></p>
+
+			<script>
+				let h = new Headers();
+				h.append("Accept", "application/json");
+
+				let request = new Request("files/servers.json", {
+					method: "POST",
+					headers: h,
+					mode: "cors"
+				});
+
+				fetch(request)
+				.then( (resp) => {
+					if (resp.ok) {
+						return resp.json();
+					} else {
+						throw new Error("BAD HTTP ERROR");
+					}
+				})
+				.then( (data) => {
+					console.log(json);
+				})
+				.catch( (err) => {
+					console.log("ERROR:", err.message);
+				});
+			</script>
 		</div>
 	</body>
 	
