@@ -30,11 +30,22 @@
 			<p>Download JSON File: <a href="files/servers.json">servers.json</a></p>
 
 			<script>
-				fetch("files/servers.json")
+				var init = {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					mode: "cors",
+					cache: "default"
+				};
+
+				let request = new Request("files/servers.json", init);
+
+				fetch(request)
 				.then(function (resp) {
 					return resp.json();
 				}).then(function (jsonData) {
-					console.log(jsonData);
+					console.log(jsonData.servers[0].address, jsonData.servers[0].name, jsonData.servers[0].motd);
 				})
 			</script>
 		</div>
