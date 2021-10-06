@@ -1,5 +1,0 @@
-{
-  "servers": [
-    {"id":1000, "name": "TestServer","address":"127.0.0.1","motd":"Welcome!"}
-  ]
-}
