@@ -27,12 +27,14 @@
 				List of Servers
 			</h2>
 
+			<p>Download JSON File: <a href="files/servers.json">servers.json</a></p>
+
 			<script>
 				fetch("files/servers.json")
 				.then(function (resp) {
 					return resp.json();
-				}).then(function (obj) {
-					console.log(obj);
+				}).then(function (jsonData) {
+					console.log(jsonData);
 				})
 			</script>
 		</div>
