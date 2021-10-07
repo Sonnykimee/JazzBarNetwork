@@ -25,11 +25,13 @@ table, th, td {
 	border: 1px solid white;
 	border-collapse: collapse;
 }
-th, td {
-	padding: 5px;
-}
 th {
+	padding: 5px;
 	text-align: left;
+}
+td {
+	background-clip: border-box;
+	padding: 5px;
 }
 
 a {
