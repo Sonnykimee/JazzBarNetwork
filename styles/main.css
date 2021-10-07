@@ -72,10 +72,8 @@ li a:hover {
 	background-color: #111;
 }
 
-.container {
-	position: absolute;
-	width:1280px;
-	margin:0px 0px 0px -640px;
-	left: 50%;
+.content {
+	width: 1280px;
+	margin: auto;
 	padding: 5px;
 }
