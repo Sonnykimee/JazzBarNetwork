@@ -26,6 +26,7 @@ table, th, td {
 	border-collapse: collapse;
 }
 th, td {
+	background-clip: border-box;
 	padding: 5px;
 }
 th {
