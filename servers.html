@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Jazz Bar Network</title>
 		<link href="styles/main.css" rel="stylesheet" type="text/css"/>
+		<script src="js/jquery-3.6.0.js"></script>
 	</head>
 	
 	<!-- Body -->
@@ -29,6 +30,18 @@
 			
 			<p>Download JSON File: <a href="files/servers.json">servers.json</a></p>
 
+			<table class="table table-stripped" style="width:70%">
+				<tr class="bg-info">
+					<th>Name</th>
+					<th>IP Address</th>
+					<th>Message of the Day</th>
+				</tr>
+					
+				<tbody id="serversTable">
+
+				</tbody>
+			</table>
+
 			<script>
 				// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-3.0
 				var init = {
@@ -46,8 +59,23 @@
 				.then(function (resp) {
 					return resp.json();
 				}).then(function (jsonData) {
-					console.log(jsonData.servers[0].address, jsonData.servers[0].name, jsonData.servers[0].motd);
+					buildTable(jsonData.servers);
 				})
+
+				function buildTable(data) {
+					var table = document.getElementById("serversTable");
+
+					for (var i=0; i<data.length; i++) {
+						var row =`
+								<tr>
+									<td>${data[i].name}</td>
+									<td>${data[i].address}</td>
+									<td>${data[i].motd}</td>
+								<tr>`;
+
+						table.innerHTML += row;
+					}
+				}
 				// @license-end
 			</script>
 		</div>
