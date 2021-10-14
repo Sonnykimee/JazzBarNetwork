@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Jazz Bar Network</title>
 		<link href="styles/main.css" rel="stylesheet" type="text/css"/>
+		<script src="js/jquery-3.6.0.min.js"></script>
 	</head>
 	
 	<!-- Body -->
@@ -14,11 +15,13 @@
 		<!-- Content -->
 		<div class="content">
 			<h1>
+				<div class="navbar">
 				<ul>
 					<li><a class="active" href="index.html">Home</a></li>
 					<li><a class="active" href="rules.html">Rules</a></li>
 					<li><a class="active" href="servers.html">Servers</a></li>
 				</ul>
+			</div>
 				
 				<img src="images/logo.png" width="300"/>
 			</h1>
@@ -29,14 +32,15 @@
 			
 			<p>Download JSON File: <a href="files/servers.json">servers.json</a></p>
 
-			<table class="table table-stripped" style="width:70%">
-				<tr class="bg-info">
-					<th>Name</th>
-					<th>IP</th>
-					<th>MOTD</th>
-				</tr>
-					
-				<tbody id="serversTable">
+			<table class="table table-stripped table-hover" style="width:75%" id="serversTable">
+				<thead>
+					<tr class="bg-info">
+						<th>Name</th>
+						<th>IP</th>
+						<th>MOTD</th>
+					</tr>
+				</thead>
+				<tbody>
 
 				</tbody>
 			</table>
@@ -44,38 +48,20 @@
 			<!-- JavaScript -->
 			<script>
 				// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-3.0
-				var init = {
-					method: "GET",
-					headers: {
-						"Content-Type": "application/json"
-					},
-					mode: "cors",
-					cache: "default"
-				};
-
-				let request = new Request("files/servers.json", init);
-
-				fetch(request)
-				.then(function (resp) {
-					return resp.json();
-				}).then(function (jsonData) {
-					buildTable(jsonData.servers);
-				})
-
-				function buildTable(data) {
-					var table = document.getElementById("serversTable");
-
-					for (var i=0; i<data.length; i++) {
-						var row =`
-								<tr>
-									<td>${data[i].name}</td>
-									<td>${data[i].ip}</td>
-									<td>${data[i].motd}</td>
-								<tr>`;
-
-						table.innerHTML += row;
-					}
-				}
+				$(document).ready(function() {
+					$.getJSON('files/servers.json', (jsonData) => {
+						const servers = jsonData.servers;
+						var row = '';
+						$.each(servers, (index, serv) => {
+							row += '<tr>';
+							row += '<td>' + serv.name + '</td>';
+							row += '<td>' + serv.ip + '</td>';
+							row += '<td>' + serv.motd + '</td>';
+							row += '<tr>';
+						});
+						$('#serversTable').append(row);
+					});
+				});
 				// @license-end
 			</script>
 		</div>
