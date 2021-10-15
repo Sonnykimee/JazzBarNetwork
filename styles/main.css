@@ -48,17 +48,17 @@ a:active {
 }
 
 ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #343434;
-}
-
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #343434;
+	}
+	
 li {
 	float: left;
 }
-
+	
 li a {
 	display: block;
 	color: white;
@@ -67,7 +67,7 @@ li a {
 	text-decoration: none;
 	font-size: 18px;
 }
-
+	
 li a:hover {
 	background-color: #111;
 }
