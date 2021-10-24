@@ -1,11 +1,11 @@
 @font-face {
-    font-family: "serif";
+    font-family: "MyAverage";
     src: url('Average-Regular.ttf');
 }
 
 body {
 	background: #1A1A1A;
-	font-family: 'Average', serif;
+	font-family: 'MyAverage', serif;
 	font-size: 18px;
 	color: white;
 }
