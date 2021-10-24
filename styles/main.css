@@ -1,6 +1,6 @@
 @font-face {
     font-family: "MyAverage";
-    src: url('Average-Regular.ttf');
+    src: url('/styles/Average-Regular.ttf');
 }
 
 body {
