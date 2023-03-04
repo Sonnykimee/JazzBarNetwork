@@ -32,18 +32,21 @@
 			
 			<p>Download JSON File: <a href="files/servers.json">servers.json</a></p>
 
-			<table class="table table-stripped table-hover" style="width:75%" id="serversTable">
-				<thead>
-					<tr class="bg-info">
-						<th>Name</th>
-						<th>IP</th>
-						<th>MOTD</th>
-					</tr>
-				</thead>
-				<tbody>
-
-				</tbody>
-			</table>
+			<div class = "serverListTable">
+				<table class="table table-stripped table-hover" id="serversTableContent">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>IP Address</th>
+							<th>MOTD</th>
+						</tr>
+					</thead>
+					<tbody>
+	
+					</tbody>
+				</table>
+			</div>
 
 			<!-- JavaScript -->
 			<script>
@@ -54,12 +57,13 @@
 						var row = '';
 						$.each(servers, (index, serv) => {
 							row += '<tr>';
+							row += '<td>' + serv.no + '</td>';
 							row += '<td>' + serv.name + '</td>';
 							row += '<td>' + serv.ip + '</td>';
 							row += '<td>' + serv.motd + '</td>';
 							row += '<tr>';
 						});
-						$('#serversTable').append(row);
+						$('#serversTableContent').append(row);
 					});
 				});
 				// @license-end

@@ -1,5 +1,5 @@
 {
   "servers":[
-    {"name": "TestServer", "ip":"127.0.0.1", "motd":"Welcome to our server!"}
+    {"no": "1", "name": "TestServer", "ip":"127.0.0.1", "motd":"Welcome to our server!"}
   ]
 }

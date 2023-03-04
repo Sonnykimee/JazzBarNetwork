@@ -20,7 +20,9 @@ h2 {
 	color: #F9E79F;
 }
 
-
+.serverListTable {
+	width: 75%;
+}
 table, th, td {
 	border: 1px solid white;
 	border-collapse: collapse;
